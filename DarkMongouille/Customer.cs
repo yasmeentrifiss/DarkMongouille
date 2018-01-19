@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace DarkMongouille
 {
-    public class Staff
+    public class Customer
     {
-
-        [BsonElement("staff_id")]
+        [BsonElement("customer_id")]
         public int Id { get; set; }
+
+        [BsonElement("store_id")]
+        public int StoreId { get; set; }
 
         [BsonElement("first_name")]
         public string FirstName { get; set; }
@@ -19,23 +21,14 @@ namespace DarkMongouille
         [BsonElement("last_name")]
         public string LastName { get; set; }
 
-        [BsonElement("picture")]
-        public string Picture { get; set; }
-
         [BsonElement("email")]
         public string Email { get; set; }
-
-        [BsonElement("store_id")]
-        public string StoreId { get; set; }
 
         [BsonElement("active")]
         public string Active { get; set; }
 
-        [BsonElement("username")]
-        public string UserName { get; set; }
-
-        [BsonElement("password")]
-        public string Password { get; set; }
+        [BsonElement("create_date")]
+        public string CreateDate { get; set; }
 
         [BsonElement("last_update")]
         public string LastUpdate { get; set; }
@@ -57,6 +50,5 @@ namespace DarkMongouille
 
         [BsonElement("phone")]
         public string Phone { get; set; }
-
     }
 }

@@ -1,1 +1,16 @@
 C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\DarkMongouille.exe.config
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\DarkMongouille.exe
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\DarkMongouille.pdb
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\DnsClient.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Bson.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Driver.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\System.Buffers.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\DnsClient.xml
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Bson.xml
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Driver.xml
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\obj\Debug\DarkMongouille.csprojResolveAssemblyReference.cache
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\obj\Debug\DarkMongouille.exe
+C:\Users\Yasmeen\Documents\GitHub\DarkMongouille\DarkMongouille\obj\Debug\DarkMongouille.pdb

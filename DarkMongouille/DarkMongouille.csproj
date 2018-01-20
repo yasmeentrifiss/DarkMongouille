@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="Inventory.cs" />

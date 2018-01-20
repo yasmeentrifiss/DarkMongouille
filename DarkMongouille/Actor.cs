@@ -12,8 +12,6 @@ namespace DarkMongouille
         [BsonElement("actor_id")]
         public int Id { get; set; }
 
-
-
         [BsonElement("actor_first_name ")]
         public string FirstName { get; set; }
 

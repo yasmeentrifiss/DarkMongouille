@@ -12,7 +12,7 @@ namespace DarkMongouille
     {
         private static string databaseName = "sakila";
         private IMongoDatabase database;
-        private bool isConnected = false;
+        public bool isConnected = false;
 
 
         // Initialize connection

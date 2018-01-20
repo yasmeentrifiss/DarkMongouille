@@ -9,7 +9,7 @@ using MongoDB.Driver.Core;
 
 namespace DarkMongouille
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -17,14 +17,48 @@ namespace DarkMongouille
 
             Server server = new Server();
 
-            // Authentification
-            Console.Write("username : ");
-            string username = Console.ReadLine();
-            Console.Write("password : ");
-            string password = Console.ReadLine();
+            // Initialize current user
 
-            // Connection
-            Connection conn = new Connection(username, password);
+            string username = "";
+            string password = "";
+            bool isConnected = false;
+
+            // While user is not connected, run authentification
+
+            while (!isConnected)
+            {
+                // Authentification
+                Console.Write("username : ");
+                username = Console.ReadLine();
+                Console.Write("password : ");
+                password = Console.ReadLine();
+
+                // Connection
+                Connection connection = new Connection(username, password);
+                isConnected = connection.isConnected;
+            }
+
+            // If user is connected, display menu
+
+            if (isConnected)
+            {
+                switch (username)
+                {
+                    case "standard":
+                        DisplayStandardMenu();
+                        break;
+                    case "business":
+                        DisplayBusinessMenu();
+                        break;
+                    case "admin":
+                        DisplayAdminMenu();
+                        break;
+                    default:
+                        Console.WriteLine("Unknown username.");
+                        break;
+                }
+            }
+
 
             Console.ReadKey();
 
@@ -75,5 +109,123 @@ namespace DarkMongouille
 
 
         }
+
+        static void DisplayStandardMenu()
+        {
+            string menu = "\n" + "******************** Standard Menu ********************" + "\n"
+                            + "1. requete 1" + "\n"
+                            + "2. requete 2" + "\n"
+                            + "3. requete 3" + "\n"
+                            + "4. requete 4" + "\n"
+                            + "5. exit " + "\n";
+            bool loop = true;
+            string choice = "";
+            while (loop)
+            {
+                Console.WriteLine(menu);
+                choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        // do req1
+                        break;
+                    case "2":
+                        //doreq2
+                        break;
+                    case "3":
+                        // do req1
+                        break;
+                    case "4":
+                        //doreq2
+                        break;
+                    case "5":
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Unknown command.");
+                        break;
+                }
+            }
+        }
+
+        static void DisplayBusinessMenu()
+        {
+            string menu = "\n" + "******************** Business Menu ********************" + "\n"
+                            + "1. requete 1" + "\n"
+                            + "2. requete 2" + "\n"
+                            + "3. requete 3" + "\n"
+                            + "4. requete 4" + "\n"
+                            + "5. exit " + "\n";
+            bool loop = true;
+            string choice = "";
+            while (loop)
+            {
+                Console.WriteLine(menu);
+                choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        // do req1
+                        break;
+                    case "2":
+                        //doreq2
+                        break;
+                    case "3":
+                        // do req1
+                        break;
+                    case "4":
+                        //doreq2
+                        break;
+                    case "5":
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Unknown command.");
+                        break;
+                }
+            }
+
+        }
+
+        static void DisplayAdminMenu()
+        {
+            string menu = "\n" + "******************** Admin Menu ********************" + "\n"
+                            + "1. requete 1" + "\n"
+                            + "2. requete 2" + "\n"
+                            + "3. requete 3" + "\n"
+                            + "4. requete 4" + "\n"
+                            + "5. exit " + "\n";
+            bool loop = true;
+            string choice = "";
+            while (loop)
+            {
+                Console.WriteLine(menu);
+                choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        // do req1
+                        break;
+                    case "2":
+                        //doreq2
+                        break;
+                    case "3":
+                        // do req1
+                        break;
+                    case "4":
+                        //doreq2
+                        break;
+                    case "5":
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Unknown command.");
+                        break;
+                }
+            }
+
+        }
+
     }
+
 }

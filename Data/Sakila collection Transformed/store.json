@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("5a62108bfadba727c400a7e5"), 
+    "store_id" : NumberInt(1), 
+    "manager_staff_id" : NumberInt(1), 
+    "last_update" : "2006-02-15 04:57:12", 
+    "address" : "939 Probolinggo Loop", 
+    "district" : "Galicia", 
+    "city" : "A Corua (La Corua)", 
+    "postal_code" : NumberInt(4166), 
+    "country" : "Spain", 
+    "phone" : NumberLong(680428310138)
+}
+{ 
+    "_id" : ObjectId("5a62108bfadba727c400a7e6"), 
+    "store_id" : NumberInt(2), 
+    "manager_staff_id" : NumberInt(2), 
+    "last_update" : "2006-02-15 04:57:12", 
+    "address" : "733 Mandaluyong Place", 
+    "district" : "Asir", 
+    "city" : "Abha", 
+    "postal_code" : NumberInt(77459), 
+    "country" : "Saudi Arabia", 
+    "phone" : NumberLong(196568435814)
+}

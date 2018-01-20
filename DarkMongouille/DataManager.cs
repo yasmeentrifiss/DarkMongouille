@@ -27,12 +27,12 @@ namespace DarkMongouille
 
                 Console.WriteLine("Connected");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Connectio failed.");
                 Console.WriteLine(e.ToString());
             }
-            
+
         }
 
         public static DataManager Instance
@@ -70,6 +70,59 @@ namespace DarkMongouille
             store.DeleteOne(newStore.ToBsonDocument());
             Console.WriteLine("Request sent.");
         }
+
+
+        public void DisplayFirstCustomer()
+        {
+            // Display first store
+            IMongoCollection<BsonDocument> customer = database.GetCollection<BsonDocument>("customer");
+            var document = customer.Find(new BsonDocument()).FirstOrDefault();
+            Console.WriteLine(document.ToString());
+        }
+
+        #region Standard User Request
+        // Quels sont les titres de films dont la classification cinématographique est "..."
+        // https://www.thoughtco.com/how-does-a-movie-get-its-rating-2423408
+        public void RateRequest(string rate)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("rating", rate); // filter applied
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable()) 
+                {
+                    Console.WriteLine(document.ToJson());
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch 
+            {
+                Console.WriteLine("Error in rating format");
+            }
+        }
+
+        //	Quels sont les titres de films dont le genre est « » 
+        //	Quels sont les titres de films dont l'acteur est « » 
+        //	Donner la liste de tous les films disponibles.
+
+        // Tous les films
+        public void DisplayAllFilms()
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var cursor = film.Find(new BsonDocument()).ToCursor();
+            foreach (var document in cursor.ToEnumerable())
+            {
+                Console.WriteLine(document.ToJson());
+                Console.Write("\n");
+            }
+        }
+        #endregion
+
 
 
     }

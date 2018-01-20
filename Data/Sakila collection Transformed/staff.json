@@ -1,0 +1,38 @@
+{ 
+    "_id" : ObjectId("5a61f5a5fadba727c4007410"), 
+    "staff_id" : NumberInt(1), 
+    "first_name" : "Mike", 
+    "last_name" : "Hillyer", 
+    "picture" : "...", 
+    "email" : "Mike.Hillyer@sakilastaff.com", 
+    "store_id" : NumberInt(1), 
+    "active" : NumberInt(1), 
+    "username" : "Mike", 
+    "password" : "8cb2237d0679ca88db6464eac60da96345513964", 
+    "last_update" : "2006-02-15 04:57:16", 
+    "address" : "535 Ahmadnagar Manor", 
+    "district" : "Abu Dhabi", 
+    "city" : "Abu Dhabi", 
+    "postal_code" : NumberInt(41136), 
+    "country" : "United Arab Emirates", 
+    "phone" : NumberLong(985109775584)
+}
+{ 
+    "_id" : ObjectId("5a61f5a5fadba727c4007414"), 
+    "staff_id" : NumberInt(2), 
+    "first_name" : "Jon", 
+    "last_name" : "Stephens", 
+    "picture" : "NULL", 
+    "email" : "Jon.Stephens@sakilastaff.com", 
+    "store_id" : NumberInt(2), 
+    "active" : NumberInt(1), 
+    "username" : "Jon", 
+    "password" : "8cb2237d0679ca88db6464eac60da96345513964", 
+    "last_update" : "2006-02-15 04:57:16", 
+    "address" : "1789 Saint-Denis Parkway", 
+    "district" : "Coahuila de Zaragoza", 
+    "city" : "Acua", 
+    "postal_code" : NumberInt(8268), 
+    "country" : "Mexico", 
+    "phone" : NumberLong(936806643983)
+}

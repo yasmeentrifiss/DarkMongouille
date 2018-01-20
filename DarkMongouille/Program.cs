@@ -28,9 +28,13 @@ namespace DarkMongouille
             };
 
             // Insert a store in db and then delete it
-            DataManager.Instance.InsertOneStore(store);
-            DataManager.Instance.DeleteOneStore(store);
+            // DataManager.Instance.InsertOneStore(store);
+            // DataManager.Instance.DeleteOneStore(store);
 
+            /// Standard User test ///
+            //DataManager.Instance.DisplayAllFilms();
+            // Can be either G, PG, PG-13, R, or NC-17.
+            DataManager.Instance.RateRequest("PG");
 
 
             Console.ReadKey();

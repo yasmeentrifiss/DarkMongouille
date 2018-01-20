@@ -13,23 +13,21 @@ namespace DarkMongouille
     {
         static void Main(string[] args)
         {
+            // Initialize db, users
 
-            var store = new Store
-            {
-                Id = 3,
-                ManagerStaffId = 3,
-                LastUpdate = "03/03/1999",
-                Address = "NA",
-                District = "",
-                City = "",
-                PostalCode = "",
-                Country = "",
-                Phone = ""
-            };
+            Server server = new Server();
 
-            // Insert a store in db and then delete it
-            // DataManager.Instance.InsertOneStore(store);
-            // DataManager.Instance.DeleteOneStore(store);
+            // Authentification
+            Console.Write("username : ");
+            string username = Console.ReadLine();
+            Console.Write("password : ");
+            string password = Console.ReadLine();
+
+            // Connection
+            Connection conn = new Connection(username, password);
+
+            Console.ReadKey();
+
 
             #region Standard User test
 
@@ -51,14 +49,14 @@ namespace DarkMongouille
             } while (choice == "");
             DataManager.Instance.TitleRequest(choice); */
 
-           /* // request 3
-           string choice = "";
-           do
-           {
-               Console.WriteLine("Please enter a name of category. Category can be Documentary, Horror, Family, Foreign, Comedy, Sports, Music, Classics, Animation, Action, New, Sci-Fi, Drama, Travel, Games, Children ");
-               choice = Console.ReadLine();
-           } while (choice == "");
-           DataManager.Instance.CategoryRequest(choice);*/
+            /* // request 3
+            string choice = "";
+            do
+            {
+                Console.WriteLine("Please enter a name of category. Category can be Documentary, Horror, Family, Foreign, Comedy, Sports, Music, Classics, Animation, Action, New, Sci-Fi, Drama, Travel, Games, Children ");
+                choice = Console.ReadLine();
+            } while (choice == "");
+            DataManager.Instance.CategoryRequest(choice);*/
 
             /* // request 4
             string choice = "";

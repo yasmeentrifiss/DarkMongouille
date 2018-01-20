@@ -106,11 +106,81 @@ namespace DarkMongouille
             }
         }
 
-        //	Quels sont les titres de films dont le genre est « » 
-        //	Quels sont les titres de films dont l'acteur est « » 
-        //	Donner la liste de tous les films disponibles.
+        // Quels sont les informations du film dont le titre est « »
+        public void TitleRequest(string title)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("title", title); // filter applied
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document.ToJson());
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in Title format");
+            }
+        }
 
-        // Tous les films
+        //	Quels sont les films dont le genre est « » 
+        public void CategoryRequest(string category)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("category.name", category); // filter applied 
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document);
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in first name format");
+            }
+        }
+
+
+        //	Quels sont les films dont le prénom de l’acteur/actrice est « » 
+        public void ActorRequest(string fname)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("actors.first_name", fname); // filter applied 
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document);
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in first name format");
+            }
+        }
+
+
+        //	Donner la liste de tous les films.
         public void DisplayAllFilms()
         {
             IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
@@ -121,6 +191,7 @@ namespace DarkMongouille
                 Console.Write("\n");
             }
         }
+
         #endregion
 
 

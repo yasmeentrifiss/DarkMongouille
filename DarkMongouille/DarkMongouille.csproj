@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actor.cs" />
+    <Compile Include="InventoryInfo.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Film.cs" />

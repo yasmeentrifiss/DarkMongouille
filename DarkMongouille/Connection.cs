@@ -193,19 +193,20 @@ namespace DarkMongouille
 
         }
         #endregion
-        /*
+        
         #region Business User/Analyst
         public void Test()
         {
-            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
-            IMongoCollection<BsonDocument> rental = database.GetCollection<BsonDocument>("rental");
+            var inventory = database.GetCollection<Inventory>("inventory");
+            var rental = database.GetCollection<Rental>("rental");
 
-            var query = from p in film.AsQueryable()
-                        join o in rental.AsQueryable() on p.AsNullableObjectId equals o.AsNullableObjectId into joinedrequest
-                        select new
+            var query = from p in inventory.AsQueryable()
+                        join o in rental.AsQueryable() on p.Id equals o.InventoryId into joinedrequest
+                        select new InventoryInfo();
+            Console.WriteLine(query.ToJson());
         }
         #endregion
-    */
+    
 
 
 

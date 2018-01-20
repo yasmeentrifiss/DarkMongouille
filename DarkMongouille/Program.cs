@@ -134,7 +134,8 @@ namespace DarkMongouille
                         connection.ActorRequest(userChoice);
                         break;
                     case "5":
-                        connection.DisplayAllFilms();
+                        // connection.DisplayAllFilms();
+                        connection.Test();
                         break;
                     case "6":
                         loop = false;

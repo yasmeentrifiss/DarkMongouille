@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -92,7 +93,7 @@ namespace DarkMongouille
                 // Print all values in data
                 foreach (var document in cursor.ToEnumerable())
                 {
-                    Console.WriteLine(document.ToJson());
+                    Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                     Console.Write("\n");
                     result++;
                 }
@@ -116,7 +117,7 @@ namespace DarkMongouille
                 // Print all values in data
                 foreach (var document in cursor.ToEnumerable())
                 {
-                    Console.WriteLine(document.ToJson());
+                    Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                     Console.Write("\n");
                     result++;
                 }
@@ -140,7 +141,7 @@ namespace DarkMongouille
                 // Print all values in data
                 foreach (var document in cursor.ToEnumerable())
                 {
-                    Console.WriteLine(document);
+                    Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                     Console.Write("\n");
                     result++;
                 }
@@ -165,7 +166,7 @@ namespace DarkMongouille
                 // Print all values in data
                 foreach (var document in cursor.ToEnumerable())
                 {
-                    Console.WriteLine(document);
+                    Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                     Console.Write("\n");
                     result++;
                 }
@@ -185,9 +186,10 @@ namespace DarkMongouille
             var cursor = film.Find(new BsonDocument()).ToCursor();
             foreach (var document in cursor.ToEnumerable())
             {
-                Console.WriteLine(document.ToJson());
+                Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                 Console.Write("\n");
             }
+
         }
 
         #endregion

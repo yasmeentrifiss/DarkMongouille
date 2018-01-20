@@ -11,8 +11,6 @@ namespace DarkMongouille
 {
     public class Program
     {
-        static Connection connection = null;
-
         static void Main(string[] args)
         {
             // Initialize db, users
@@ -24,6 +22,7 @@ namespace DarkMongouille
             string username = "";
             string password = "";
             bool isConnected = false;
+            Connection connection = null;
 
             // While user is not connected, run authentification
 
@@ -46,9 +45,9 @@ namespace DarkMongouille
             {
                 switch (username)
                 {
-           
+
                     case "standard":
-                        DisplayStandardMenu();
+                        DisplayStandardMenu(connection);
                         break;
                     case "business":
                         DisplayBusinessMenu();
@@ -68,43 +67,9 @@ namespace DarkMongouille
 
             #region Standard User test
 
-            /* // request 1
-            string choice = "";
-            do
-            {
-                Console.WriteLine("Please enter a rate. Rates can be G, PG, PG-13, R, or NC-17.");
-                choice = Console.ReadLine();
-            } while (choice == "");
-            DataManager.Instance.RateRequest(choice);*/
 
-            /* // request 2 
-            string choice = "";
-            do
-            {
-                Console.WriteLine("Please enter a film title all in CAPS");
-                choice = Console.ReadLine();
-            } while (choice == "");
-            DataManager.Instance.TitleRequest(choice); */
 
-            /* // request 3
-            string choice = "";
-            do
-            {
-                Console.WriteLine("Please enter a name of category. Category can be Documentary, Horror, Family, Foreign, Comedy, Sports, Music, Classics, Animation, Action, New, Sci-Fi, Drama, Travel, Games, Children ");
-                choice = Console.ReadLine();
-            } while (choice == "");
-            DataManager.Instance.CategoryRequest(choice);*/
 
-            /* // request 4
-            string choice = "";
-            do
-            {
-                Console.WriteLine("Please enter a first name actor all in CAPS");
-                choice = Console.ReadLine();
-            } while (choice == "");
-            DataManager.Instance.ActorRequest(choice);*/
-
-            // DataManager.Instance.DisplayAllFilms();
             #endregion
 
 
@@ -113,35 +78,65 @@ namespace DarkMongouille
 
         }
 
-        static void DisplayStandardMenu()
+        static void DisplayStandardMenu(Connection connection)
         {
             string menu = "\n" + "******************** Standard Menu ********************" + "\n"
-                            + "1. requete 1" + "\n"
-                            + "2. requete 2" + "\n"
-                            + "3. requete 3" + "\n"
-                            + "4. requete 4" + "\n"
-                            + "5. exit " + "\n";
+                            + "1. requete 1 : Quels sont les titres de films dont la classification cinématographique est ... " + "\n"
+                            + "2. requete 2 : Quels sont les informations du film dont le titre est ... " + "\n"
+                            + "3. requete 3 : Quels sont les films dont le genre est ... " + "\n"
+                            + "4. requete 4 : Quels sont les films dont le prénom de l’acteur/actrice est ... " + "\n"
+                            + "5. Bonus : Donner la liste de tous les films  " + "\n"
+                            +"6. exit " + "\n";
             bool loop = true;
-            string choice = "";
+            string userChoice = "";
             while (loop)
             {
                 Console.WriteLine(menu);
-                choice = Console.ReadLine();
-                switch (choice)
+                userChoice = Console.ReadLine();
+                switch (userChoice)
                 {
                     case "1":
-                        // do req1
+                        // request 1
+                        userChoice = "";
+                        do
+                        {
+                            Console.WriteLine("Please enter a rate. Rates can be G, PG, PG-13, R, or NC-17.");
+                            userChoice = Console.ReadLine();
+                        } while (userChoice == "");
+                        connection.RateRequest(userChoice);
                         break;
                     case "2":
-                        //doreq2
+                        userChoice = "";
+                        do
+                        {
+                            Console.WriteLine("Please enter a film title all in CAPS");
+                            userChoice = Console.ReadLine();
+                        } while (userChoice == "");
+                        connection.TitleRequest(userChoice);
                         break;
                     case "3":
-                        // do req1
+                        // request 3
+                        userChoice = "";
+                        do
+                        {
+                            Console.WriteLine("Please enter a name of category. Category can be Documentary, Horror, Family, Foreign, Comedy, Sports, Music, Classics, Animation, Action, New, Sci-Fi, Drama, Travel, Games, Children ");
+                            userChoice = Console.ReadLine();
+                        } while (userChoice == "");
+                        connection.CategoryRequest(userChoice);
                         break;
                     case "4":
-                        //doreq2
+                         userChoice = "";
+                        do
+                        {
+                            Console.WriteLine("Please enter a first name actor all in CAPS");
+                            userChoice = Console.ReadLine();
+                        } while (userChoice == "");
+                        connection.ActorRequest(userChoice);
                         break;
                     case "5":
+                        connection.DisplayAllFilms();
+                        break;
+                    case "6":
                         loop = false;
                         break;
                     default:

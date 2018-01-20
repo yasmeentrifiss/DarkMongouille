@@ -11,6 +11,8 @@ namespace DarkMongouille
 {
     public class Program
     {
+        static Connection connection = null;
+
         static void Main(string[] args)
         {
             // Initialize db, users
@@ -34,7 +36,7 @@ namespace DarkMongouille
                 password = Console.ReadLine();
 
                 // Connection
-                Connection connection = new Connection(username, password);
+                connection = new Connection(username, password);
                 isConnected = connection.isConnected;
             }
 
@@ -44,6 +46,7 @@ namespace DarkMongouille
             {
                 switch (username)
                 {
+           
                     case "standard":
                         DisplayStandardMenu();
                         break;

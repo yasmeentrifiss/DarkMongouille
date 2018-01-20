@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Actor.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Film.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Program.cs" />

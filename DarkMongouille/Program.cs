@@ -46,7 +46,7 @@ namespace DarkMongouille
             //store.InsertOne(newStore.ToBsonDocument());
             //store.DeleteOne(newStore.ToBsonDocument());
 
-            Console.WriteLine("Request sent.");
+            Console.WriteLine("Request sent.");     
 
             Console.ReadKey();
 

@@ -78,6 +78,134 @@ namespace DarkMongouille
             }
         }
 
+        #region Standard User Request
+        // Quels sont les titres de films dont la classification cinématographique est "..."
+        // https://www.thoughtco.com/how-does-a-movie-get-its-rating-2423408
+        public void RateRequest(string rate)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("rating", rate); // filter applied
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document.ToJson());
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in rating format");
+            }
+        }
+
+        // Quels sont les informations du film dont le titre est « »
+        public void TitleRequest(string title)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("title", title); // filter applied
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document.ToJson());
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in Title format");
+            }
+        }
+
+        //	Quels sont les films dont le genre est « » 
+        public void CategoryRequest(string category)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("category.name", category); // filter applied 
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document);
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in first name format");
+            }
+        }
+
+
+        //	Quels sont les films dont le prénom de l’acteur/actrice est « » 
+        public void ActorRequest(string fname)
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var filter = Builders<BsonDocument>.Filter.Eq("actors.first_name", fname); // filter applied 
+            int result = 0; // number of results
+            try
+            {
+                var cursor = film.Find(filter).ToCursor();
+                // Print all values in data
+                foreach (var document in cursor.ToEnumerable())
+                {
+                    Console.WriteLine(document);
+                    Console.Write("\n");
+                    result++;
+                }
+                Console.WriteLine("Number of results :" + result);
+            }
+            catch
+            {
+                Console.WriteLine("Error in first name format");
+            }
+        }
+
+
+        //	Donner la liste de tous les films.
+        public void DisplayAllFilms()
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            var cursor = film.Find(new BsonDocument()).ToCursor();
+            foreach (var document in cursor.ToEnumerable())
+            {
+                Console.WriteLine(document.ToJson());
+                Console.Write("\n");
+            }
+        }
+
+        #endregion
+        /*
+        #region Business User/Analyst
+        public void Test()
+        {
+            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
+            IMongoCollection<BsonDocument> rental = database.GetCollection<BsonDocument>("rental");
+
+            var query = from p in film.AsQueryable()
+                        join o in rental.AsQueryable() on p.AsNullableObjectId equals o.AsNullableObjectId into joinedrequest
+                        select new
+        }
+        #endregion
+    */
+
+
 
     }
 }

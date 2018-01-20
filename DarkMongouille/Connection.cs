@@ -186,12 +186,12 @@ namespace DarkMongouille
             var cursor = film.Find(new BsonDocument()).ToCursor();
             foreach (var document in cursor.ToEnumerable())
             {
-                Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
+                Console.WriteLine(document.ToJson(new 
+                    JsonWriterSettings { Indent = true }));
                 Console.Write("\n");
             }
 
         }
-
         #endregion
         /*
         #region Business User/Analyst

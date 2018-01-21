@@ -3,22 +3,22 @@ Installation + configuration suivre : http://chewbii.com/wp-content/uploads/2015
 Lancer le serveur mongoDB : 
 (ex : C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe)
 
-Créer la base de données sakila
+CrÃ©er la base de donnÃ©es sakila
 	Tuto sous studio 3T :
-		Ajoutez une nouvelle base de donnée au nom de "sakila" : Docs\img\img1.png
+		Ajoutez une nouvelle base de donnÃ©e au nom de "sakila" : Docs\img\img1.png
 		Docs\img\img2.png
-		Une fois la base de donnée crée il faut importer les collections : Docs\img\img3.png
+		Une fois la base de donnÃ©e crÃ©Ã©e il faut importer les collections : Docs\img\img3.png
 
-Importer les collections Dans "\Data\Sakila collection Transformed" (json conseillé)
+Importer les collections Dans "\Data\Sakila collection Transformed" (json conseillÃ©)
 	Tuto sous studio 3T :
-		Clic droit sur la base de donnée "sakila" et Importer les collections : Docs\img\img4.png
-		Sélectionnez JSON,
+		Clic droit sur la base de donnÃ©e "sakila" et Importer les collections : Docs\img\img4.png
+		SÃ©lectionnez JSON,
 		puis le bouton +,
-		Sélectionnez tous les fichiers json dans "\Data\Sakila collection Transformed" : Docs\img\img5.png
+		SÃ©lectionnez tous les fichiers json dans "\Data\Sakila collection Transformed" : Docs\img\img5.png
 		Puis cliquez sur Next, Next et Start Import
-		Vous devriez avoir le résultat suivant : Docs\img\img6.png 
+		Vous devriez avoir le rÃ©sultat suivant : Docs\img\img6.png 
 
-Toujours le serveur lancé ouvrez la solution : DarkMongouille\DarkMongouille.sln avec visual studio et cliquez sur "Start"
+Toujours le serveur lancÃ© ouvrez la solution : DarkMongouille\DarkMongouille.sln avec visual studio et cliquez sur "Start"
 Ou bien : DarkMongouille\DarkMongouille\bin\Debug\DarkMongouille.exe
 
 Les identifiants et mots de passe pour chaque utilisateurs sont :

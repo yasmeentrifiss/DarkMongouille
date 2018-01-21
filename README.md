@@ -57,19 +57,16 @@ Les identifiants et mots de passe pour chaque utilisateurs sont :
 
 
 Utilisateur standard :
- 
 username : standard
 
 password : 1234
 
 Utilisateur Analyste/Decisionnaire :
-
 username : business
 
 password : business
 
 Administrateur : 
-
 username : admin
 
 password : admin

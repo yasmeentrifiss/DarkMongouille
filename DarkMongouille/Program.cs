@@ -53,7 +53,7 @@ namespace DarkMongouille
                         DisplayBusinessMenu(connection);
                         break;
                     case "admin":
-                        DisplayAdminMenu();
+                        DisplayAdminMenu(connection);
                         break;
                     default:
                         Console.WriteLine("Unknown username.");
@@ -181,14 +181,11 @@ namespace DarkMongouille
 
         }
 
-        static void DisplayAdminMenu()
+        static void DisplayAdminMenu(Connection connection)
         {
             string menu = "\n" + "******************** Admin Menu ********************" + "\n"
-                            + "1. requete 1" + "\n"
-                            + "2. requete 2" + "\n"
-                            + "3. requete 3" + "\n"
-                            + "4. requete 4" + "\n"
-                            + "5. exit " + "\n";
+                            + "1. requete 1 : Server status" + "\n"
+                            + "2. exit " + "\n";
             bool loop = true;
             string choice = "";
             while (loop)
@@ -198,18 +195,9 @@ namespace DarkMongouille
                 switch (choice)
                 {
                     case "1":
-                        // do req1
+                        connection.ServerStatus();
                         break;
                     case "2":
-                        //doreq2
-                        break;
-                    case "3":
-                        // do req1
-                        break;
-                    case "4":
-                        //doreq2
-                        break;
-                    case "5":
                         loop = false;
                         break;
                     default:

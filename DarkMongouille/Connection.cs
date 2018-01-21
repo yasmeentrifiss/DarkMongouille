@@ -263,71 +263,6 @@ namespace DarkMongouille
 
         }
 
-       
-        /*
-        public void CategoryRatingRequest()
-        {
-            var map = @"
-                        $map=function() {
-                            categories={};
-                            for(var i=0; i<this.category.length; i++){
-                                categories[this.category[i].name]={'name':this.category[i].name,'avg':this.rental_rate,'sum':this.rental_rate, 'nb':1};
-                            }
-                            for(k in categories){
-                                emit(null, categories[k]);
-                            }};";
-
-            var reduce = @"
-                           $reduce=function(key, values) { 
-                                tab = {}; sum=0; avg=0; nb=0;
-                                for(i=0;i<values.length;i++){
-                                    name=values[i].name;
-                                    if(tab[name]){
-                                        update = {'name':name,'avg':tab[name].avg+values[i].avg,'sum':tab[name].sum+values[i].sum, 'nb':tab[name].nb+values[i].nb};
-                                        tab[name] = update;
-                                    }
-                                    else{
-                                        tab[name]={'name':name,'avg':values[i].avg,'sum':values[i].sum, 'nb':values[i].nb };
-                                    } 
-                                }
-                                for(k in tab){
-  	                                update = {'name':tab[k].name,'avg':tab[k].sum/tab[k].nb,'sum':tab[k].sum, 'nb':tab[k].nb};
-                                    tab[k] = update; }
-                                return {'categories':tab }; };";
-
-            var queryParam = @"{'query':{}, 'out':{'inline':true}};";
-            IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
-            /*var results = database.RunCommand<BsonDocument>(new BsonDocument
-            {
-                {"mapreduce","film"},
-                {"map",map},
-                {"reduce",reduce},
-                {"out","inline:1"}
-            }
-                );
-
-           var options = new MapReduceOptions<BsonDocument,BsonDocument>();
-
-            var results = film.MapReduce<BsonDocument>(map, reduce);
-
-            var res = results.ToListAsync().Result;
-            int count = 0;
-            foreach (var doc in res)
-            {
-                try
-                {
-                    count++;
-                    Console.WriteLine(doc.ToJson(new JsonWriterSettings { Indent = true }));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ex :" + ex);
-                }
-            }
-
-
-        }*/
-
         public void CategoryRatingRequest()
         {
             var map = "function() {" +
@@ -376,13 +311,23 @@ namespace DarkMongouille
                     Console.WriteLine("ex :" + ex);
                 }
             }
-
-
         }
         #endregion
 
 
 
+        #region Admin
+        public void ServerStatus()
+        {
+            var serverStatus = new BsonDocument
+                {
+                    { "serverStatus", "1" },
+                };
+
+
+            Console.WriteLine(database.RunCommand<BsonDocument>(serverStatus).ToJson(new JsonWriterSettings { Indent = true }));
+        }
+        #endregion
 
     }
 }

@@ -208,7 +208,7 @@ namespace DarkMongouille
                 { "film_id", id}
                 };
 
-                var aggregate = inventory.Aggregate().Match(match); // .Lookup("rental", "inventory_id", "inventory_id", "rented")
+                var aggregate = inventory.Aggregate().Match(match).Lookup("rental", "inventory_id", "inventory_id", "rented");
                 var res = aggregate.ToListAsync().Result;
 
                 int count = 0;

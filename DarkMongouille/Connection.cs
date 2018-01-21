@@ -2,6 +2,7 @@
 using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -186,24 +187,80 @@ namespace DarkMongouille
             var cursor = film.Find(new BsonDocument()).ToCursor();
             foreach (var document in cursor.ToEnumerable())
             {
-                Console.WriteLine(document.ToJson(new 
-                    JsonWriterSettings { Indent = true }));
+                Console.WriteLine(document.ToJson(new JsonWriterSettings { Indent = true }));
                 Console.Write("\n");
             }
 
         }
         #endregion
-        
+
         #region Business User/Analyst
-        public void Test()
+        // 	Afficher, pour un id de film donné, chaque inventaire pour ce film et la liste des locations
+        public void InventoryRequestById(string filmId)
         {
-            var inventory = database.GetCollection<Inventory>("inventory");
+            IMongoCollection<BsonDocument> inventory = database.GetCollection<BsonDocument>("inventory");
+            var rental = database.GetCollection<Rental>("rental");
+            try
+            {
+                int id = Convert.ToInt32(filmId);
+                var match = new BsonDocument
+                {
+                { "film_id", id}
+                };
+
+                var aggregate = inventory.Aggregate().Match(match); // .Lookup("rental", "inventory_id", "inventory_id", "rented")
+                var res = aggregate.ToListAsync().Result;
+
+                int count = 0;
+                foreach (var doc in res)
+                {
+                    try
+                    {
+                        count++;
+                        Console.WriteLine(doc.ToJson(new JsonWriterSettings { Indent = true }));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("ex :" + ex);
+                    }
+                }
+                Console.WriteLine("Number of results :"+count);
+            }
+            catch
+            {
+                Console.WriteLine("Error in entry format");
+            }
+
+        }
+        // Affiche la liste des locations dans chaque inventaire
+        public void InventoryRequest()
+        {
+            IMongoCollection<BsonDocument> inventory = database.GetCollection<BsonDocument>("inventory");
             var rental = database.GetCollection<Rental>("rental");
 
-            var query = from p in inventory.AsQueryable()
-                        join o in rental.AsQueryable() on p.Id equals o.InventoryId into joinedrequest
-                        select new InventoryInfo();
-            Console.WriteLine(query.ToJson());
+            var match = new BsonDocument
+                {
+                { "film_id", 1}
+                };
+
+            var aggregate = inventory.Aggregate().Lookup("rental", "inventory_id", "inventory_id", "rented"); ;
+            var res = aggregate.ToListAsync().Result;
+
+            int count = 0;
+            foreach (var doc in res)
+            {
+                try
+                {
+                    count++;
+                    Console.WriteLine(doc.ToJson(new JsonWriterSettings { Indent = true }));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ex :"+ ex);
+                }
+            }
+            Console.WriteLine("Number of results :" + count);
+
         }
         #endregion
     

@@ -50,7 +50,7 @@ namespace DarkMongouille
                         DisplayStandardMenu(connection);
                         break;
                     case "business":
-                        DisplayBusinessMenu();
+                        DisplayBusinessMenu(connection);
                         break;
                     case "admin":
                         DisplayAdminMenu();
@@ -134,8 +134,7 @@ namespace DarkMongouille
                         connection.ActorRequest(userChoice);
                         break;
                     case "5":
-                        // connection.DisplayAllFilms();
-                        connection.Test();
+                        connection.DisplayAllFilms();
                         break;
                     case "6":
                         loop = false;
@@ -147,16 +146,16 @@ namespace DarkMongouille
             }
         }
 
-        static void DisplayBusinessMenu()
+        static void DisplayBusinessMenu(Connection connection)
         {
             string menu = "\n" + "******************** Business Menu ********************" + "\n"
-                            + "1. requete 1" + "\n"
+                            + "1. requete 1 : Afficher, pour un id de film donné, chaque inventaire pour ce film et la liste des locations" + "\n"
                             + "2. requete 2" + "\n"
-                            + "3. requete 3" + "\n"
-                            + "4. requete 4" + "\n"
-                            + "5. exit " + "\n";
+                            + "3. Bonus : Afficher pour chaque inventaire la liste des locations" + "\n"
+                            + "4. exit " + "\n";
             bool loop = true;
             string choice = "";
+            string userChoice = "";
             while (loop)
             {
                 Console.WriteLine(menu);
@@ -164,18 +163,23 @@ namespace DarkMongouille
                 switch (choice)
                 {
                     case "1":
-                        // do req1
+                        // requete 1
+                        userChoice = "";
+                        do
+                        {
+                            Console.WriteLine("Please enter a film id.Have to be an integer");
+                            userChoice = Console.ReadLine();
+                        } while (userChoice == "");
+                        connection.InventoryRequestById(userChoice);
                         break;
                     case "2":
                         //doreq2
                         break;
                     case "3":
-                        // do req1
+                        // request 3
+                        connection.InventoryRequest();
                         break;
                     case "4":
-                        //doreq2
-                        break;
-                    case "5":
                         loop = false;
                         break;
                     default:

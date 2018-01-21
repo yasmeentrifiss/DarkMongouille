@@ -93,8 +93,7 @@ namespace DarkMongouille
                 database.RunCommand<BsonDocument>(createStandard);
                 database.RunCommand<BsonDocument>(createBusiness);
                 database.RunCommand<BsonDocument>(createAdmin);
-
-
+                
             }
 
         }

@@ -141,7 +141,7 @@ namespace DarkMongouille
         {
             string menu = "\n" + "******************** Business Menu ********************" + "\n"
                             + "1. requete 1 : Afficher, pour un id de film donné, chaque inventaire pour ce film et la liste des locations" + "\n"
-                            + "2. requete 2" + "\n"
+                            + "2. requete 2 : Pour chaque catégorie donner le nombre de notes et la moyenne des notes (mapReduce)" + "\n"
                             + "3. Bonus : Afficher pour chaque inventaire la liste des locations" + "\n"
                             + "4. exit " + "\n";
             bool loop = true;
@@ -158,7 +158,7 @@ namespace DarkMongouille
                         userChoice = "";
                         do
                         {
-                            Console.WriteLine("Please enter a film id.Have to be an integer");
+                            Console.WriteLine("Please enter a film id. Have to be an integer");
                             userChoice = Console.ReadLine();
                         } while (userChoice == "");
                         connection.InventoryRequestById(userChoice);

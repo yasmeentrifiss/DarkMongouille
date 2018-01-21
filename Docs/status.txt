@@ -1,0 +1,173 @@
+RS1:PRIMARY> rs.status()
+{
+        "set" : "RS1",
+        "date" : ISODate("2018-01-21T16:23:36.382Z"),
+        "myState" : 1,
+        "term" : NumberLong(2),
+        "heartbeatIntervalMillis" : NumberLong(2000),
+        "optimes" : {
+                "lastCommittedOpTime" : {
+                        "ts" : Timestamp(1516551808, 1),
+                        "t" : NumberLong(2)
+                },
+                "readConcernMajorityOpTime" : {
+                        "ts" : Timestamp(1516551808, 1),
+                        "t" : NumberLong(2)
+                },
+                "appliedOpTime" : {
+                        "ts" : Timestamp(1516551808, 1),
+                        "t" : NumberLong(2)
+                },
+                "durableOpTime" : {
+                        "ts" : Timestamp(1516551808, 1),
+                        "t" : NumberLong(2)
+                }
+        },
+        "members" : [
+                {
+                        "_id" : 0,
+                        "name" : "localhost:27017",
+                        "health" : 1,
+                        "state" : 1,
+                        "stateStr" : "PRIMARY",
+                        "uptime" : 9773,
+                        "optime" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "electionTime" : Timestamp(1516542045, 1),
+                        "electionDate" : ISODate("2018-01-21T13:40:45Z"),
+                        "configVersion" : 19,
+                        "self" : true
+                },
+                {
+                        "_id" : 1,
+                        "name" : "localhost:27018",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 2091,
+                        "optime" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "optimeDurableDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:35.317Z"),
+                        "lastHeartbeatRecv" : ISODate("2018-01-21T16:23:35.318Z"),
+                        "pingMs" : NumberLong(0),
+                        "syncingTo" : "localhost:27017",
+                        "configVersion" : 19
+                },
+                {
+                        "_id" : 2,
+                        "name" : "localhost:27019",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 2321,
+                        "optime" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "optimeDurableDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:36.292Z"),
+                        "lastHeartbeatRecv" : ISODate("2018-01-21T16:23:36.038Z"),
+                        "pingMs" : NumberLong(0),
+                        "syncingTo" : "localhost:27020",
+                        "configVersion" : 19
+                },
+                {
+                        "_id" : 3,
+                        "name" : "localhost:30000",
+                        "health" : 1,
+                        "state" : 7,
+                        "stateStr" : "ARBITER",
+                        "uptime" : 9041,
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:35.055Z"),
+                        "lastHeartbeatRecv" : ISODate("2018-01-21T16:23:34.411Z"),
+                        "pingMs" : NumberLong(0),
+                        "configVersion" : 19
+                },
+                {
+                        "_id" : 5,
+                        "name" : "localhost:27020",
+                        "health" : 1,
+                        "state" : 2,
+                        "stateStr" : "SECONDARY",
+                        "uptime" : 3746,
+                        "optime" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(1516551808, 1),
+                                "t" : NumberLong(2)
+                        },
+                        "optimeDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "optimeDurableDate" : ISODate("2018-01-21T16:23:28Z"),
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:35.054Z"),
+                        "lastHeartbeatRecv" : ISODate("2018-01-21T16:23:35.049Z"),
+                        "pingMs" : NumberLong(0),
+                        "syncingTo" : "localhost:27017",
+                        "configVersion" : 19
+                },
+                {
+                        "_id" : 6,
+                        "name" : "localhost:28000",
+                        "health" : 0,
+                        "state" : 8,
+                        "stateStr" : "(not reachable/healthy)",
+                        "uptime" : 0,
+                        "optime" : {
+                                "ts" : Timestamp(0, 0),
+                                "t" : NumberLong(-1)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(0, 0),
+                                "t" : NumberLong(-1)
+                        },
+                        "optimeDate" : ISODate("1970-01-01T00:00:00Z"),
+                        "optimeDurableDate" : ISODate("1970-01-01T00:00:00Z"),
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:34.716Z"),
+                        "lastHeartbeatRecv" : ISODate("1970-01-01T00:00:00Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "not running with --replSet",
+                        "configVersion" : -1
+                },
+                {
+                        "_id" : 7,
+                        "name" : "localhost:29000",
+                        "health" : 0,
+                        "state" : 8,
+                        "stateStr" : "(not reachable/healthy)",
+                        "uptime" : 0,
+                        "optime" : {
+                                "ts" : Timestamp(0, 0),
+                                "t" : NumberLong(-1)
+                        },
+                        "optimeDurable" : {
+                                "ts" : Timestamp(0, 0),
+                                "t" : NumberLong(-1)
+                        },
+                        "optimeDate" : ISODate("1970-01-01T00:00:00Z"),
+                        "optimeDurableDate" : ISODate("1970-01-01T00:00:00Z"),
+                        "lastHeartbeat" : ISODate("2018-01-21T16:23:35.958Z"),
+                        "lastHeartbeatRecv" : ISODate("1970-01-01T00:00:00Z"),
+                        "pingMs" : NumberLong(0),
+                        "lastHeartbeatMessage" : "No connection could be made because the target machine actively refused it.",
+                        "configVersion" : -1
+                }
+        ],
+        "ok" : 1
+}

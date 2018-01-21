@@ -50,5 +50,8 @@ namespace DarkMongouille
 
         [BsonElement("actors")]
         public List<Actor> Actors { get; set; }
+
+        [BsonElement("category")]
+        public List<Category> Categories { get; set; }
     }
 }

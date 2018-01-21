@@ -20,7 +20,7 @@ Une fois mongoDB installé :
 		
 ![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img2.png?raw=true)
 		
-		Une fois la base de donnée crée il faut importer les collections :
+		Une fois la base de donnée créée il faut importer les collections :
 		
 ![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img3.png?raw=true)
 

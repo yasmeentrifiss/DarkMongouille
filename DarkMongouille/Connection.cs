@@ -161,11 +161,11 @@ namespace DarkMongouille
         }
 
 
-        //	Quels sont les films dont le prénom de l’acteur/actrice est « » 
-        public void ActorRequest(string fname)
+        //	Quels sont les films dont le nom de l’acteur/actrice est « » 
+        public void ActorRequest(string name)
         {
             IMongoCollection<BsonDocument> film = database.GetCollection<BsonDocument>("film");
-            var filter = Builders<BsonDocument>.Filter.Eq("actors.first_name", fname); // filter applied 
+            var filter = Builders<BsonDocument>.Filter.Eq("actors.last_name", name); // filter applied 
             int result = 0; // number of results
             try
             {

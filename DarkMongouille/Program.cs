@@ -74,7 +74,7 @@ namespace DarkMongouille
                             + "1. requete 1 : Quels sont les titres de films dont la classification cinématographique est ... " + "\n"
                             + "2. requete 2 : Quels sont les informations du film dont le titre est ... " + "\n"
                             + "3. requete 3 : Quels sont les films dont le genre est ... " + "\n"
-                            + "4. requete 4 : Quels sont les films dont le prénom de l’acteur/actrice est ... " + "\n"
+                            + "4. requete 4 : Quels sont les films dont le nom de l’acteur/actrice est ... " + "\n"
                             + "5. Bonus : Donner la liste de tous les films  " + "\n"
                             + "6. exit " + "\n";
             bool loop = true;
@@ -119,7 +119,7 @@ namespace DarkMongouille
                          userChoice = "";
                         do
                         {
-                            Console.WriteLine("Please enter a first name actor all in CAPS");
+                            Console.WriteLine("Please enter an actor name all in CAPS");
                             userChoice = Console.ReadLine();
                         } while (userChoice == "");
                         connection.ActorRequest(userChoice);

@@ -16,13 +16,13 @@ Une fois mongoDB installé :
 		
 		Ajoutez une nouvelle base de donnée au nom de "sakila" :
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img1.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img1.png?raw=true)
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img2.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img2.png?raw=true)
 		
 		Une fois la base de donnée crée il faut importer les collections :
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img3.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img3.png?raw=true)
 
 - Importer les collections Dans "\Data\Sakila collection Transformed" (json conseillé)
 	
@@ -30,7 +30,7 @@ Une fois mongoDB installé :
 		
 		Clic droit sur la base de donnée "sakila" et Importer les collections :
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img4.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img4.png?raw=true)
 		
 		Sélectionnez JSON,
 		
@@ -38,13 +38,13 @@ Une fois mongoDB installé :
 		
 		Sélectionnez tous les fichiers json dans "\Data\Sakila collection Transformed" :
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img5.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img5.png?raw=true)
 		
 		Puis cliquez sur Next, Next et Start Import
 		
 		Vous devriez avoir le résultat suivant :
 		
-		![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img6.png?raw=true)
+![alt text](https://github.com/yasmeentrifiss/DarkMongouille/blob/master/Docs/img/img6.png?raw=true)
 
 ## Lancement de l'application :
 

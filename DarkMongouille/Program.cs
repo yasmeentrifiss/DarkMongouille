@@ -65,16 +65,6 @@ namespace DarkMongouille
             Console.ReadKey();
 
 
-            #region Standard User test
-
-
-
-
-            #endregion
-
-
-            Console.ReadKey();
-
 
         }
 
@@ -86,7 +76,7 @@ namespace DarkMongouille
                             + "3. requete 3 : Quels sont les films dont le genre est ... " + "\n"
                             + "4. requete 4 : Quels sont les films dont le prénom de l’acteur/actrice est ... " + "\n"
                             + "5. Bonus : Donner la liste de tous les films  " + "\n"
-                            +"6. exit " + "\n";
+                            + "6. exit " + "\n";
             bool loop = true;
             string userChoice = "";
             while (loop)
@@ -106,6 +96,7 @@ namespace DarkMongouille
                         connection.RateRequest(userChoice);
                         break;
                     case "2":
+                        // request 2
                         userChoice = "";
                         do
                         {
@@ -173,7 +164,7 @@ namespace DarkMongouille
                         connection.InventoryRequestById(userChoice);
                         break;
                     case "2":
-                        //doreq2
+                        connection.CategoryRatingRequest();
                         break;
                     case "3":
                         // request 3

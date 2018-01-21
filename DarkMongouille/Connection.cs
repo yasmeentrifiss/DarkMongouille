@@ -47,8 +47,10 @@ namespace DarkMongouille
 
 
         // Do requests here
+        
         // HERE IS AN EXAMPLE WITH THE STORE TABLE
 
+        #region Store Example
         public void DisplayFirstStore()
         {
             if (isConnected)
@@ -79,6 +81,10 @@ namespace DarkMongouille
                 Console.WriteLine("Request sent.");
             }
         }
+
+        #endregion
+
+
 
         #region Standard User Request
         // Quels sont les titres de films dont la classification cinématographique est "..."
@@ -193,6 +199,8 @@ namespace DarkMongouille
 
         }
         #endregion
+
+
 
         #region Business User/Analyst
         // 	Afficher, pour un id de film donné, chaque inventaire pour ce film et la liste des locations
